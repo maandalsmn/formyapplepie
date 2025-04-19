@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Raffy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+    body {
+      font-family: 'Patrick Hand', cursive;
+      background-color: #fef6f0;
+      color: #4e3d28;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/cardboard.png');
+    }
+    .page {
+      display: none;
+      padding: 50px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .active {
+      display: block;
+    }
+    .nav-btn {
+      display: block;
+      margin: 30px auto;
+      background-color: #e3c9a8;
+      color: #3e2f1c;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .nav-btn:hover {
+      background-color: #f1d9b5;
+    }
+    .scrap-frame {
+      border: 5px dashed #b08968;
+      padding: 20px;
+      background-color: #fffdf7;
+      border-radius: 15px;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+      background-image: url('https://www.transparenttextures.com/patterns/notebook.png');
+    }
+    img.photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 18px;
+      text-align: center;
+    }
+    a.playlist {
+      color: #b08968;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.playlist:hover {
+      text-decoration: underline;
+    }
+    .sticker {
+      width: 80px;
+      position: absolute;
+      z-index: 0;
+    }
+    .sticker1 { top: 20px; left: 10px; transform: rotate(-10deg); }
+    .sticker2 { bottom: 20px; right: 10px; transform: rotate(15deg); }
+  </style>
+</head>
+<body>
+
+  <!-- Musik Latar -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2fcdb45f74.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <img src="https://i.pinimg.com/originals/8f/84/7c/8f847ce84311b0bbd5d9e3f7f0e6a7e7.png" class="sticker sticker1" />
+  <img src="https://i.pinimg.com/originals/59/c4/56/59c4566b9e3a4234d6a5d72a504ed89b.png" class="sticker sticker2" />
+
+  <div id="page1" class="page active">
+    <div class="scrap-frame">
+      <h1 style="text-align:center;">Hi, Raffy!</h1>
+    </div>
+    <button class="nav-btn" onclick="nextPage(2)">Next</button>
+  </div>
+
+  <div id="page2" class="page">
+    <div class="scrap-frame">
+      <p>i love you. i really do. i love you more than i know how to explain sometimes. i love you in the quiet, in the chaos, in the small moments, in the big ones too. i always love you even when i don’t say it out loud.</p>
+      <p>and maybe… sometimes when you say “i love you” and i don’t answer it right away, or not in the way you expect. it’s not because i don’t feel the same. it’s not because i don’t want to say it. it’s because i wanna say it when it’s honest, when i can give it to you with everything in me fi.</p>
+      <p>but the truth is, i love you fi. i love you so much it scares me sometimes. i love you in a way that stays, no matter what. i love you when you’re laughing, when you’re quiet, when you’re confused, when you’re tired, when you’re not even trying. i love you for being you, and i love you for the way you make me feel like i can be me, too.</p>
+      <p>i realize. aku nggak cuma suka kamu. aku cinta kamu. i love you so much, and it’s deep and honest and real. and i don’t think i’ll ever stop.</p>
+      <p>i love you, raffy. i love you when things are easy, and especially when they’re not. i love you when i’m close to you, and even when i’m far. i love you in the now, and i know i’ll still love you in the later.</p>
+      <p>aku nggak janji semuanya bakal sempurna, tapi aku janji satu hal: aku mau jalanin ini pelan-pelan, bareng kamu. aku mau kita belajar bareng, saling ngerti, saling jagain satu sama lain, dan gak akan pergi ninggalin satu sama lain lagi.</p>
+      <p>so if you ever wonder how i feel, if you ever doubt it for a second, read this again. because the answer will always be the same:</p>
+      <p>i love you. and i always will.</p>
+      <p>– amanda</p>
+    </div>
+    <button class="nav-btn" onclick="nextPage(3)">Next</button>
+  </div>
+
+  <div id="page3" class="page">
+    <div class="scrap-frame" style="text-align: center;">
+      <p>i love you my apple pie 🤎</p>
+      <img src="https://storage.googleapis.com/personal-assets-amanda/10DEC6A8-3406-4C5F-AB28-2D43BBFECB6A.jpeg" alt="us" class="photo">
+      <div class="footer">
+        <p>playlist for you: 
+          <a class="playlist" href="https://open.spotify.com/playlist/6p85XLcDyfhjGzwI8ef10Y?si=aht4polMRrKhcjmkwbph4w&pi=o8wpxRZ9RLqDa" target="_blank">click here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function nextPage(n) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + n).classList.add('active');
+    }
+  </script>
+</body>
+</html>
